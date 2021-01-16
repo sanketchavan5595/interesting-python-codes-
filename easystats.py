@@ -141,6 +141,10 @@ sigma = standardDeviation(file)
 cv = CV(file)
 line()
 
-print("mean: \t" + str(am) + "\n" + "median: \t" + str(m) +
-      "\n" + "Mode: \t" + str(M) + "\n" + "Standard deviation: \t" + str(sigma) + "\n" + "Coefficient of Variation: \t" + str(
-    cv) + "\n")
+print(file)
+line()
+print("mean: \t" + str(am) + "\n" + 
+      "median: \t" + str(m) +"\n" + 
+      "Mode: \t" + str(M) + "\n" + 
+      "Standard deviation: \t" + str(sigma) + "\n" + 
+      "Coefficient of Variation: \t" + str(cv) + "\n")
