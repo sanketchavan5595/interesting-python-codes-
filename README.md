@@ -1,4 +1,5 @@
 ### interesting-python-codes-
-* these are some of the code which i find interesting 
-* i wrote them while i was learning python 
-* i hope you like them 
+* These are some of the code which i find interesting 
+* I wrote them while i was learning python 
+* I hope you like them 
+* 
