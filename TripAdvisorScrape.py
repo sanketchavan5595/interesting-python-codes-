@@ -2,10 +2,11 @@ from bs4 import BeautifulSoup
 import requests
 import time
 import pandas as pd
-import lxml
+from tqdm import tqdm
+# import lxml
 
 def TripAdvisorScrape(pages, fileName):
-    numpages = (pages * 50) + 1
+    numpages = pages * 50
 
     # lists
     titles = []
@@ -15,7 +16,8 @@ def TripAdvisorScrape(pages, fileName):
     sleeps = []
     location = []
 
-    for i in range(0, numpages, 50):
+
+    for i in tqdm(range(0, numpages, 50)):
 
         url = 'https://www.tripadvisor.in/VacationRentals-g186338-Reviews-oa{}-London_England-Vacation_Rentals.html'.format(i)
         page = requests.get(url)
@@ -56,7 +58,8 @@ def TripAdvisorScrape(pages, fileName):
                 except:
                     sleeps.append('no sleeps')
 
-        print(f'page number: {(i/50) + 1} done....')
+
+        # print(f'page number: {int(i/50) + 1} done....')
 
 
     d = {
@@ -67,7 +70,7 @@ def TripAdvisorScrape(pages, fileName):
         'sleeps': sleeps,
         'location': location
     }
-
+    print('COMPLETED!!!')
     final_name = fileName + '.csv'
     return pd.DataFrame(d).to_csv(final_name)
 
